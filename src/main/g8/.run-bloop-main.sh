@@ -1,2 +1,2 @@
 #!/bin/bash
-bloop run root
+bloop run $name$

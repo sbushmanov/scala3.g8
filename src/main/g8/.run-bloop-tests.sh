@@ -1,2 +1,2 @@
 #!/bin/bash
-bloop test root
+bloop test $name$-test

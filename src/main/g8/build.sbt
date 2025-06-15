@@ -1,4 +1,5 @@
 val scala3Version = "$scalaVersion$"
+val AkkaVersion   = "2.8.8"
 
 lazy val $name$ = project
   .in(file("."))
@@ -9,7 +10,11 @@ lazy val $name$ = project
     libraryDependencies ++= Seq(
       "org.scala-lang.modules" %% "scala-parallel-collections" % "1.2.0",
       "org.scala-lang.modules" %% "scala-parser-combinators"   % "2.4.0",
-      "org.scalatest"          %% "scalatest"                  % "3.2.19" % Test
+      "ch.qos.logback"          % "logback-classic"            % "1.5.18",
+      "com.typesafe.akka"      %% "akka-actor-typed"           % AkkaVersion,
+      "com.typesafe.akka"      %% "akka-stream"                % AkkaVersion,
+      "com.typesafe.akka" %% "akka-actor-testkit-typed" % AkkaVersion % Test,
+      "org.scalatest"     %% "scalatest"                % "3.2.19"    % Test
     ),
     assembly / assemblyJarName := "$name;format="lower"$-fatjar-$version$.jar",
     assembly / assemblyMergeStrategy := {

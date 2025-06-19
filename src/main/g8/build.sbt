@@ -9,7 +9,7 @@ lazy val $name$ = project
     scalaVersion := scala3Version,
     libraryDependencies ++= Seq(
       "org.scala-lang.modules" %% "scala-parallel-collections" % "1.2.0",
-      "org.scala-lang.modules" %% "scala-parser-combinators"   % "2.4.0",w
+      "org.scala-lang.modules" %% "scala-parser-combinators"   % "2.4.0",
       "ch.qos.logback"          % "logback-classic"            % "1.5.18",
       "org.scala-lang.modules" %% "scala-xml"                  % "2.4.0",
       "comw.typesafe.akka"      %% "akka-actor-typed"           % AkkaVersion,

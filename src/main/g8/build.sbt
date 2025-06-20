@@ -12,7 +12,7 @@ lazy val $name$ = project
       "org.scala-lang.modules" %% "scala-parser-combinators"   % "2.4.0",
       "ch.qos.logback"          % "logback-classic"            % "1.5.18",
       "org.scala-lang.modules" %% "scala-xml"                  % "2.4.0",
-      "comw.typesafe.akka"      %% "akka-actor-typed"           % AkkaVersion,
+      "com.typesafe.akka"      %% "akka-actor-typed"           % AkkaVersion,
       "com.typesafe.akka"      %% "akka-stream"                % AkkaVersion,
       "com.typesafe.akka" %% "akka-actor-testkit-typed" % AkkaVersion % Test,
       "org.scalatest"     %% "scalatest"                % "3.2.19"    % Test

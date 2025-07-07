@@ -14,10 +14,10 @@ lazy val $name$ = project
       "org.scala-lang.modules" %% "scala-xml"                  % "2.4.0",
       "com.typesafe.akka"      %% "akka-actor-typed"           % AkkaVersion,
       "com.typesafe.akka"      %% "akka-stream"                % AkkaVersion,
-      "com.typesafe.akka" %% "akka-actor-testkit-typed" % AkkaVersion % Test,
-      "org.scalatest"     %% "scalatest"                % "3.2.19"    % Test
+      "com.typesafe.akka"      %% "akka-actor-testkit-typed"   % AkkaVersion % Test,
+      "org.scalatest"          %% "scalatest"                  % "3.2.19"    % Test
     ),
-    assembly / assemblyJarName := "$name;format="lower"$-fatjar-$version$.jar",
+    assembly / assemblyJarName := s"\${name.value}-fatjar-\${version.value}.jar",
     assembly / assemblyMergeStrategy := {
       case PathList("META-INF", xs @ _*) => MergeStrategy.discard
       case x => MergeStrategy.first

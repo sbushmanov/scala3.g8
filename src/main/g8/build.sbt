@@ -8,13 +8,9 @@ lazy val $name$ = project
     version := "$version$",
     scalaVersion := scala3Version,
     libraryDependencies ++= Seq(
+      "org.typelevel"          %% "cats-core"                  % "2.13.0",
       "org.scala-lang.modules" %% "scala-parallel-collections" % "1.2.0",
       "org.scala-lang.modules" %% "scala-parser-combinators"   % "2.4.0",
-      "ch.qos.logback"          % "logback-classic"            % "1.5.18",
-      "org.scala-lang.modules" %% "scala-xml"                  % "2.4.0",
-      "com.typesafe.akka"      %% "akka-actor-typed"           % AkkaVersion,
-      "com.typesafe.akka"      %% "akka-stream"                % AkkaVersion,
-      "com.typesafe.akka"      %% "akka-actor-testkit-typed"   % AkkaVersion % Test,
       "org.scalatest"          %% "scalatest"                  % "3.2.19"    % Test
     ),
     assembly / assemblyJarName := s"\${name.value}-fatjar-\${version.value}.jar",

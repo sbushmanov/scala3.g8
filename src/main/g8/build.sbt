@@ -1,5 +1,4 @@
 val scala3Version = "$scalaVersion$"
-val AkkaVersion   = "2.8.8"
 
 lazy val $name$ = project
   .in(file("."))

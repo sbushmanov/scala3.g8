@@ -31,3 +31,4 @@ scalacOptions ++= Seq(
 )
 
 enablePlugins(JmhPlugin)
+wartremoverWarnings ++= Warts.all

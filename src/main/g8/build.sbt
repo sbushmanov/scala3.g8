@@ -2,6 +2,7 @@ val scala3Version = "$scalaVersion$"
 
 lazy val $name$ = project
   .in(file("."))
+  .enablePlugins(JmhPlugin)
   .settings(
     name                             := "$name$",
     version                          := "$version$",
@@ -19,16 +20,13 @@ lazy val $name$ = project
     },
     Test / testOptions += Tests.Argument(TestFrameworks.ScalaTest, "-P4"),
     semanticdbEnabled                := true,
-    semanticdbVersion                := scalafixSemanticdb.revision
+    semanticdbVersion                := scalafixSemanticdb.revision,
+    wartremoverWarnings             ++= Warts.all,
+    scalacOptions                   ++= Seq(
+      "-Wunused:imports", // Required for unused import detection in Scala 3
+      "-Wunused:privates", // Optional: for unused private members
+      "-Wunused:locals", // Optional: for unused local values
+      "-Wunused:params", // Optional: for unused parameters
+      "-Wunused:implicits" // Optional: for unused implicits
+    )
   )
-
-scalacOptions ++= Seq(
-  "-Wunused:imports", // Required for unused import detection in Scala 3
-  "-Wunused:privates", // Optional: for unused private members
-  "-Wunused:locals", // Optional: for unused local values
-  "-Wunused:params", // Optional: for unused parameters
-  "-Wunused:implicits" // Optional: for unused implicits
-)
-
-enablePlugins(JmhPlugin)
-wartremoverWarnings ++= Warts.all
